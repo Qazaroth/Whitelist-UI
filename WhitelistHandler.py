@@ -26,6 +26,7 @@ class WhitelistHandler:
 
         return fileData
 
+
     def listWhitelistData(self):
         whData = self.getWhitelistData()
         self.__whitelist = whData

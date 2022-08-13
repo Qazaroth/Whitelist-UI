@@ -2,6 +2,26 @@
 {% block body %}
 {% autoescape false %}
 <h1 style="text-align: center;">MC Server</h1>
-<h2 style="text-align: center;">Welcome!</h2>
+<h2 style="text-align: center;">Whitelisted Users</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Username</th>
+            <th scope="col">UUID</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for u in data %}
+        <tr>
+            <th scope="row">{{ u["name"] }}</th>
+            {% if u["uuid"] == "" %}
+            <td>Not specified.</td>
+            {% else %}
+            <td>{{ u["uuid"] }}</td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 {% endautoescape %}
 {% endblock %}
