@@ -1,0 +1,1 @@
+whitelistFile = "whitelist.json"
