@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block body %}
+<h1 style="text-align: center;">{{ logo }}</h1>
+<h2 style="text-align: center;">Add User to Whitelist</h2>
+<h5 style="text-align: center;">{{ msg }}</h5>
+<form method="post">
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" name="username" id="username" aria-describedby="usernameHelp" placeholder="Enter player username">
+        <small id="usernameHelp" class="form-text text-muted">Username of Player, case-sensitive.</small>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}

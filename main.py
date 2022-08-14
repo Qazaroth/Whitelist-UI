@@ -10,7 +10,7 @@ whHandler = WhitelistHandler()
 
 def createApp():
     app = Flask(__name__)
-    app.secret_key = ""
+    app.secret_key = secret
 
     with app.app_context():
         import blueprints.index

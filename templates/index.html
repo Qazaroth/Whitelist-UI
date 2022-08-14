@@ -1,8 +1,12 @@
 {% extends 'base.html' %}
 {% block body %}
-{% autoescape false %}
-<h1 style="text-align: center;">MC Server</h1>
+<h1 style="text-align: center;">{{ logo }}</h1>
 <h2 style="text-align: center;">Whitelisted Users</h2>
+<h4 style="text-align: center;">
+    <a class="btn btn-primary" href="{{ url_for('main.addUser') }}" role="button">
+        Add User
+    </a>
+</h4>
 <table class="table">
     <thead>
         <tr>
@@ -19,9 +23,9 @@
             {% else %}
             <td>{{ u["uuid"] }}</td>
             {% endif %}
+            <td><a class="btn btn-danger" href="/remove/{{ u['name'] }}" role="button">Remove</a></td>
         </tr>
         {% endfor %}
     </tbody>
 </table>
-{% endautoescape %}
 {% endblock %}
