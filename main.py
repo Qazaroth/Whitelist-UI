@@ -1,6 +1,6 @@
 from config import *
 
-from FileHandler import FileHandler
+from handlers.FileHandler import FileHandler
 from WhitelistHandler import WhitelistHandler
 from flask import Flask
 from MCAPI import *

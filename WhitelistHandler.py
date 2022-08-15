@@ -1,5 +1,5 @@
 from config import *
-from FileHandler import FileHandler
+from handlers.FileHandler import FileHandler
 from Utils import clear
 from MCAPI import *
 
