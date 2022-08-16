@@ -21,6 +21,9 @@ if __name__ == "__main__":
     if not isCLI:
         app = createApp()
         
+        if not webPort:
+            webPort = 25585
+
         app.run(port=webPort)
     else:
         from Utils import clear

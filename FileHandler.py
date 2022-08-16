@@ -1,13 +1,18 @@
 from pathlib import Path
 
 class FileHandler:
-    def checkFileExists(self, file):
+    def checkPathExists(self, file):
         p = Path(file)
 
         return p.exists()
 
+    def checkFileExists(self, file):
+        p = Path(file)
+
+        return p.is_file()
+
     def readFile(self, file):
-        if self.checkFileExists(file):
+        if self.checkPathExists(file):
             whFile = open(file, "r")
 
             return whFile.read()
@@ -15,7 +20,7 @@ class FileHandler:
         return None
 
     def writeFile(self, file, data):
-        if self.checkFileExists(file):
+        if self.checkPathExists(file):
             whFile = open(file, "w")
 
             whFile.write(data)
