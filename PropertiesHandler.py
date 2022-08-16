@@ -71,6 +71,7 @@ class PropertiesHandler:
 
             propertyString += "\n{}={}".format(key, value)
         self.__fileHandler.writeFile(serverPropertiesFile, propertyString)
+        self.__properties = parsePropertiesFile(self.__fileHandler.readFile(serverPropertiesFile))
 
     def getProperties(self):
         self.__properties = parsePropertiesFile(self.__fileHandler.readFile(serverPropertiesFile))

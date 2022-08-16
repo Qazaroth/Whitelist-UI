@@ -2,7 +2,7 @@ from mojang import MojangAPI
 
 import requests, json
 
-def getMCPlayerData(username):
+def getMCPlayerData_new(username):
     uuid = MojangAPI.get_uuid(username)
 
     if not uuid:
@@ -11,7 +11,7 @@ def getMCPlayerData(username):
     profile = MojangAPI.get_profile(uuid)
     return profile
 
-def getMCPlayerData_old(inp):
+def getMCPlayerData(inp):
     res = requests.get("https://playerdb.co/api/player/minecraft/{}".format(inp))
 
     return json.loads(res.content.decode("utf8"))

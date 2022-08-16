@@ -61,8 +61,14 @@ class WhitelistHandler:
         return True
 
     def addToWhitelist(self, username="", uuid=""):
-        if username == "" and uuid == "":
+        if username == "":# and uuid == "":
             return False
+        
+        for d in self.__whitelist:
+            name = d["name"]
+
+            if name == username:
+                return False
 
         if checkPlayer:
             plrBodyRaw = getMCPlayerData(username)
@@ -92,3 +98,8 @@ class WhitelistHandler:
 
     def updateWhitelist(self):
         self.__fileHandler.writeFile(whitelistFile, json.dumps(self.__whitelist))
+
+if __name__ == "__main__":
+    w = WhitelistHandler()
+
+    print(w.addToWhitelist("Qazaroth"))

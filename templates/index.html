@@ -1,31 +1,5 @@
 {% extends 'base.html' %}
 {% block body %}
 <h1 style="text-align: center;">{{ logo }}</h1>
-<h2 style="text-align: center;">Whitelisted Users</h2>
-<h4 style="text-align: center;">
-    <a class="btn btn-primary" href="{{ url_for('main.addUser') }}" role="button">
-        Add User
-    </a>
-</h4>
-<table class="table">
-    <thead>
-        <tr>
-            <th scope="col">Username</th>
-            <th scope="col">UUID</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for u in data %}
-        <tr>
-            <th scope="row">{{ u["name"] }}</th>
-            {% if u["uuid"] == "" %}
-            <td>Not specified.</td>
-            {% else %}
-            <td>{{ u["uuid"] }}</td>
-            {% endif %}
-            <td><a class="btn btn-danger" href="/remove/{{ u['name'] }}" role="button">Remove</a></td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
+<h2 style="text-align: center;">Main Page</h2>
 {% endblock %}
