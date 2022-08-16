@@ -1,4 +1,4 @@
-from config import *
+from utils.config import whitelistFile
 from FileHandler import FileHandler
 from Utils import clear
 from MCAPI import *

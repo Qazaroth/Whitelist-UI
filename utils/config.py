@@ -1,11 +1,15 @@
-# Path to whitelist file
-whitelistFile = "whitelist.json"
+# Path to server files
+serverPath = "TestFiles"
+
+# DO NOT CHANGE ANYTHING HERE
+whitelistFile = "{}\whitelist.json".format(serverPath)
+serverPropertiesFile = "{}\server.properties".format(serverPath)
 
 checkUUID = False
 checkPlayer = True
 
 # Toggles CLI mode or web interface mode. Default: Web Interface
-isCLI = False
+isCLI = True
 
 # Name of your minecraft server
 logo="MC Server"

@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash
 from WhitelistHandler import WhitelistHandler
 
-from config import logo
+from utils.config import logo
 
 bp = Blueprint("main", __name__)
 

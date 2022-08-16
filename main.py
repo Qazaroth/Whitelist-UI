@@ -1,11 +1,9 @@
-from config import *
+from utils.config import *
 
-from handlers.FileHandler import FileHandler
-from handlers.WhitelistHandler import WhitelistHandler
+from WhitelistHandler import WhitelistHandler
 from flask import Flask
 from MCAPI import *
 
-fileHandler = FileHandler()
 whHandler = WhitelistHandler()
 
 def createApp():
