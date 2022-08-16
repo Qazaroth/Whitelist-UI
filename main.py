@@ -13,9 +13,11 @@ def createApp():
     with app.app_context():
         import blueprints.index
         import blueprints.whitelistRoute
+        import blueprints.serverPropertiesRoute
 
         app.register_blueprint(blueprints.index.bp)
         app.register_blueprint(blueprints.whitelistRoute.bp)
+        app.register_blueprint(blueprints.serverPropertiesRoute.bp)
 
         return app
 

@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash
 from WhitelistHandler import WhitelistHandler
+from Forms import AddWhitelistUser
 
 from utils.config import logo
 
@@ -10,6 +11,7 @@ whHandler = WhitelistHandler()
 @bp.route("/whitelist/add", methods=["GET", "POST"])
 def addUser():
     msg = ""
+    form = AddWhitelistUser()
     if request.method == "POST":
         uname = request.form["username"]
 
@@ -22,7 +24,7 @@ def addUser():
     
     whHandler.updateWhitelist()
     
-    return render_template("addUser.html", title="Add User", logo=logo, msg=msg)
+    return render_template("whitelist/addUser.html", title="Add User", logo=logo, msg=msg, form=form)
 
 @bp.route("/whitelist/remove/<target>")
 def removeUser(target):
@@ -40,4 +42,4 @@ def removeUser(target):
 @bp.route("/whitelist")
 def whitelistMain():
     whitelistData = whHandler.getWhitelistData()
-    return render_template("whitelist.html", title="Whitelist Users", data=whitelistData, logo=logo)
+    return render_template("whitelist/whitelist.html", title="Whitelist Users", data=whitelistData, logo=logo)

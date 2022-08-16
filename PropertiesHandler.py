@@ -4,7 +4,11 @@ from FileHandler import FileHandler
 from Utils import clear
 from datetime import datetime
 
+from base64 import b64encode
+
 import pytz
+
+importantSettings = ["rcon.password", "rcon.port"]
 
 months = ["Jan", "Feb", "Mar", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 days = ["Mon", "Tue", "Wed", "Thurs", "Fri", "Sat", "Sun"]
@@ -27,6 +31,9 @@ def parsePropertiesFile(rawData):
                     value = int(value)
                 except:
                     pass
+
+            if setting in importantSettings:
+                value = b64encode(str(value).encode("utf8"))
 
             returnVal[setting] = value
 
@@ -81,4 +88,6 @@ if __name__ == "__main__":
     ph = PropertiesHandler()
     properties = ph.getProperties()
 
-    ph.updateProperties()
+    for i in properties:
+        v = properties[i]
+        print(i, v)

@@ -1,3 +1,4 @@
 requests
 mojang
 pytz
+wtforms

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block body %}
+<h1 style="text-align: center;">{{ logo }}</h1>
+<h2 style="text-align: center;">Server Properties</h2>
+<form method="post">
+<!--
+{% for field in form %}
+    <div class="form-group row">
+        {{ field.label }}
+        {{ field(class_="form-control") }}
+    </div>
+{% endfor %}-->
+{% for d in data %}
+    {% if d not in ["generator-settings"] %}
+        <div class="form-group">
+            <label for="{{ d }}" class="col-sm-2 col-form-label">{{ d }}</label>
+            <div class="col-sm- 10">
+                <input class="form-control" id="{{ d }}" placeholder="{{ data[d] }}" value="{{ data[d] }}" readonly/>
+            </div>
+        </div>
+    {% endif %}
+{% endfor %}
+</form>
+{% endblock %}
