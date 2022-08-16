@@ -49,13 +49,8 @@ Accessing the main page of the server.
 ## Bugs and Fixes
 Generally for any error, if it does not resolve itself or not something stupid done by your OS, you can try to redownload from the github and it should work. 
 
-If it  does not, you can start an issue, with the format below:
-Title: Issue you're having
-Comment:
-- Describe your issue
-- Describe what you did before
-- If possible, provide screenshots
-*More information will be needed, do not delete anything*
+If it  does not, you can start an issue, with the format specified here:
+https://github.com/Qazaroth/Whitelist-UI/issues/1
 
 If **start.bat** does not run the program, edit the batch file and change `python3.10` with your respective python.
 
