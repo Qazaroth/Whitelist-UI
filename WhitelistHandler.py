@@ -1,4 +1,4 @@
-from utils.config import whitelistFile
+from utils.config import whitelistFile, checkPlayer, checkUUID
 from FileHandler import FileHandler
 from Utils import clear
 from MCAPI import *
