@@ -15,4 +15,4 @@ def main():
     form.allowFlight.data = properties["allow-flight"]
     form.allowNether.data = properties["allow-nether"]
 
-    return render_template("serverproperties/properties.html", logo=logo, form=form, data=properties)
+    return render_template("serverproperties/properties.html", logo=logo, data=properties)
